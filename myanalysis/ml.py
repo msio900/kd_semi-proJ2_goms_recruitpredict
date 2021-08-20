@@ -3,7 +3,7 @@ import joblib
 from config.settings import DATA_DIRS
 from frame.udatadb import UdataDb
 import pandas as pd;
-load_model = joblib.load(DATA_DIRS[0]+'\\lgb_clf_mid.pkl')
+load_model = joblib.load(DATA_DIRS[0]+'/lgb_clf_mid.pkl')
 #
 # ResDb().resultinsert(id, result);
 # result=load_model.predict(pd.DataFrame({'jobsearch':,'yrwish':yrwish,'wishhr':wishhr,'wishsalary':wishsalary,
@@ -12,7 +12,7 @@ load_model = joblib.load(DATA_DIRS[0]+'\\lgb_clf_mid.pkl')
 #                                        'train':train,'jobseek':jobseek,'cert':cert}));
 #
 
-mid_code = pd.read_csv(DATA_DIRS[0]+'\\midjobCate_code.csv');
+mid_code = pd.read_csv(DATA_DIRS[0]+'/midjobCate_code.csv');
 
 
 
