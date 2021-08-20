@@ -1,0 +1,119 @@
+<!DOCTYPE HTML>
+<!--
+	Stellar by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+{% load static %}
+	<head>
+		<title>Generic - Stellar by HTML5 UP</title>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
+		<noscript><link rel="stylesheet" href="{% static 'assets/css/noscript.css' %}" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1>{{ request.session.loginuser.name }} 님의 결과입니다.</h1>
+						<p></p>
+					</header>
+
+				<!-- Main -->
+					<div style="position: percentage; width: 120%; margin-left: -150px; border : 1px solid red; background-color:#DDDDDD; border-radius: 5px;">
+
+                <table  border="1" cellpadding=10 bordercolor="blue" width ="500" height="300" align = "center" >
+					<tr bgcolor="blue" align ="center">
+						<p><td colspan = "16" span style="color:black">결과 리스트</td></p>
+					</tr>
+
+					<tr style = "color:black; font-size:18px;border:1px solid black;" align = "center" bgcolor="skyblue" >
+						<td>학교유형</td><td>전공</td><td>나이</td><td>취업훈련</td><td>인턴경험</td><td>토익점수</td><td>토스등급</td><td>구직경험</td><td>자격증수</td><td>구직활동</td><td>1년내직장</td><td>근로시간</td><td>최저연봉</td><td>일자리경험</td><td>생활비</td>
+					</tr>
+						{%  for d in datalist %}
+					<tr style="text-align: center; color:black; border:1px solid black; ">
+
+							<td>{{d.schooltype}}</td>
+							<td>{{d.majorcate}}</td>
+							<td>{{d.train}}</td>
+							<td>{{d.age}}</td>
+							<td>{{d.intern}}</td>
+							<td>{{d.toeic}}</td>
+							<td>{{d.tosp}}</td>
+							<td>{{d.jobseek}}</td>
+							<td>{{d.cert}}</td>
+							<td>{{d.jobsearch}}</td>
+							<td>{{d.yrwish}}</td>
+							<td>{{d.wishhr}}</td>
+							<td>{{d.wishsalary}}</td>
+							<td>{{d.jobgradu}}</td>
+							<td>{{d.liveexp}}</td>
+
+							<td><a href="{% url 'datadelete' %}?user_id={{request.session.loginuser.user_id}}">delete</a></td>
+
+					</tr>
+						{% endfor %}
+
+
+
+</table>
+					<div>
+						<ul class="actions">
+							<li><a href = "index.html" class="button">돌아가기</a></li>
+						</ul>
+					</div>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<section>
+							<h2>Made By GOMS</h2>
+							<p class="jeju">취업준비생 분들의 취업 성공을 위해 만들어졌습니다.<br>여러분들의 취업을 기원합니다.</p>
+							<ul class="actions">
+								<li><a href="generic.html" class="button">Learn More</a></li>
+							</ul>
+						</section>
+						<section>
+							<h2>Support</h2>
+							<dl class="alt">
+<!--								<dt>한국고용정보원</dt>-->
+								<dt>Address</dt>
+								<dd class="jeju">충청북도 음성군 맹동면 태정로 6 (두성리, 한국고용정보원)</dd>
+								<dt>Phone</dt>
+								<dd class="jeju">1577-7114(유선전화)</dd>
+								<dt>Site</dt>
+								<dd><a href="https://www.keis.or.kr/main/index.do">https://www.keis.or.kr/main/index.do</a></dd>
+							</dl>
+							<ul class="icons">
+								<li><a href="https://twitter.com/?lang=ko" class="icon brands fa-twitter alt"><span class="label">Twitter</span></a></li>
+								<li><a href="https://fb.com" class="icon brands fa-facebook-f alt"><span class="label">Facebook</span></a></li>
+								<li><a href="https://www.instagram.com/" class="icon brands fa-instagram alt"><span class="label">Instagram</span></a></li>
+								<li><a href="https://github.com/" class="icon brands fa-github alt"><span class="label">GitHub</span></a></li>
+								<li><a href="https://dribbble.com/" class="icon brands fa-dribbble alt"><span class="label">Dribbble</span></a></li>
+							</ul>
+						</section>
+						<p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+			<script src="{% static 'assets/js/jquery.scrollex.min.js' %}"></script>
+			<script src="{% static 'assets/js/jquery.scrolly.min.js' %}"></script>
+			<script src="{% static 'assets/js/browser.min.js' %}"></script>
+			<script src="{% static 'assets/js/breakpoints.min.js' %}"></script>
+			<script src="{% static 'assets/js/util.js' %}"></script>
+			<script src="{% static 'assets/js/main.js' %}"></script>
+
+
+
+	</body>
+
+</html>
